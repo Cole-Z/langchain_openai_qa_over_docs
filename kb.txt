@@ -1,0 +1,1055 @@
+Chapter 1. Introduction to Linux
+After completing this chapter, you will be able to: Explain the purpose of an operating system
+Outline the key features of the Linux operating system
+Describe the origins of the Linux operating systems
+Identify the characteristics of various Linux distributions and where to find them
+Explain the common uses of Linux in industry today
+
+Linux technical expertise is essential in today’s computer workplace as more and more companies switch to Linux to meet their computing needs. Thus, it is important to understand how Linux can be used, what benefits Linux offers to a company, and how Linux has developed and continues to develop. In the first half of this chapter, you will learn about operating system terminology and features of the Linux operating system, as well as the history and development of Linux. Later in this chapter, you will learn about the various types of Linux and about the situations in which Linux is used.
+
+Operating Systems
+Every computer has two fundamental types of components: hardware and software. You are probably familiar with these terms, but it’s helpful to review their meanings so you can more easily understand how Linux helps them work together.
+
+Hardware consists of the physical components inside a computer that are electrical in nature; they contain a series of circuits that manipulate the flow of information. A computer can contain many pieces of hardware, including the following:
+
+A processor (also known as the central processing unit or CPU), which computes information
+
+Physical memory (also known as random access memory, or RAM), which stores information needed by the processor
+
+Hard disk and solid state disk drives, which store most of the information that you use
+
+CD/DVD drives, which read and write information to and from CD/DVD discs
+
+Flash memory card readers, which read and write information to and from removable memory cards, such as Secure Digital (SD) cards
+
+Sound cards, which provide audio to external speakers
+
+Video cards, which display results to the display screen
+
+Network adapter cards, which provide access to wired and wireless (Wi-Fi or Bluetooth) networks
+
+Ports (such as USB, eSATA, GPIO, and Thunderbolt), which provide access to external devices including keyboards, mice, printers, and storage devices
+
+Mainboards (also known as motherboards), which provide the circuitry (also known as a bus) for interconnecting all other components
+
+Software, on the other hand, refers to the sets of instructions or programs that allow the hardware components to manipulate data (or files). When a bank teller types information into the computer behind the counter at a bank, for example, the bank teller is using a program that understands what to do with your bank records. Programs and data are usually stored on hardware media, such as hard disks or solid state disks, although they can also be stored on removable media or even embedded in computer chips. These programs are loaded into parts of your computer hardware (such as your computer’s memory and processor) when you first turn on your computer and when you start additional software, such as word processors or Internet browsers. After a program is executed on your computer’s hardware, that program is referred to as a process. In other words, a program is a file stored on your computer, whereas a process is that file in action, performing a certain task.
+
+There are two types of programs. The first type, applications (or apps), includes those programs designed for a specific use and with which you commonly interact, such as word processors, computer games, graphical manipulation programs, and computer system utilities. The second type, operating system (OS) software, consists of a set of software components that control the hardware of your computer. Without an operating system, you would not be able to use your computer. Turning on a computer loads the operating system into computer hardware, which then loads and centrally controls all other application software in the background. At this point, the user (the person using the computer) is free to interact with the applications, perhaps by typing on the keyboard or clicking with a mouse. Applications take the information the user supplies and relay it to the operating system, which uses the computer hardware to carry out the requests. The relationship between users, application software, operating system software, and computer hardware is illustrated in Figure 1-1.
+Details
+The role of operating system software
+The operating system carries out many tasks by interacting with different types of computer hardware. For the operating system to accomplish the tasks, it must contain the appropriate device driver software for every hardware device in your computer. Each device driver tells the operating system how to use that specific device. The operating system also provides a user interface, which is a program that accepts user input indicating what to do, forwards this input to the operating system for completion, and, after it is completed, gives the results back to the user. The user interface can be a command-line prompt, in which the user types commands, or it can be a graphical user interface (GUI), which consists of menus, dialog boxes, and symbols (known as icons) that the user can interact with via the keyboard or the mouse. A typical Linux GUI is shown in Figure 1-2.
+Details
+A Linux graphical user interface
+
+Finally, operating systems offer system services, which are applications that handle system-related tasks, such as printing, scheduling programs, and network access. These system services determine most of the functionality in an operating system. Different operating systems offer different system services, and many operating systems allow users to customize the services they offer.
+
+The Linux Operating System
+Linux (pronounced “Lih-nucks”) is an operating system you use to run applications on a variety of hardware. Similar to other operating systems, Linux loads into computer memory when you first power on your computer and initializes (or activates) all of the hardware components. Next, it loads the programs that display the interface. From within the interface, you can execute commands that tell the operating system and other applications to perform specific tasks. The operating system then uses the computer hardware to perform the tasks required by the applications.
+
+Linux can manage thousands of tasks at the same time, including allowing multiple users to access the system simultaneously. Hence, Linux is referred to as a multiuser and multitasking operating system.
+
+Versions of the Linux Operating System
+The core component of the Linux operating system is called the Linux kernel. The Linux kernel and supporting software (called function libraries) are written almost entirely in the C programming language, which is one of the most common languages that software developers use when creating programs.
+
+Although you can use a variety of software to modify the appearance of Linux, the underlying kernel is common to all types of Linux. The Linux kernel is developed continuously; thus, you should understand the version numbers of the Linux kernel to decide which kernel version is appropriate for your needs. Because the Linux kernel is directly responsible for controlling the computer’s hardware (via device drivers), you might sometimes need to upgrade the kernel after installing Linux to take advantage of new technologies or to fix problems (also known as bugs) related to your computer’s hardware. Consequently, you need a good understanding of your system’s hardware to decide which kernel to use.
+
+Note 
+For a complete list of kernels, kernel versions, and their improvements, see www.kernel.org.
+
+In some cases, you can use updates in the form of a kernel module or a kernel patch to provide or fix hardware supported by the kernel. Kernel modules and kernel patches are discussed later in this book.
+
+Identifying Kernel Versions
+Linux kernel versions are made up of the following three components:
+
+Major number
+
+Minor number
+
+Revision number
+
+Let’s look at a sample Linux kernel version, 4.17.6. In this example, the major number is the number 4, which indicates the major version of the Linux kernel. The minor number, represented by the number 17, indicates the minor revision of the Linux kernel. As new features are added to the Linux kernel over time, the minor number is incremented. The major number is usually incremented when a major kernel feature is implemented, when the minor number versioning reaches a high number, or to signify a major event; for example, the 3.0 kernel was introduced to commemorate the twentieth anniversary of Linux.
+
+Linux kernel changes occur frequently. Very minor changes are represented by a revision number indicating the most current changes to the version of the particular kernel that is being released. For example, a 4.17.6 kernel has a revision number of 6. This kernel is the sixth release of the 4.17 kernel. Some kernels have over 100 revisions as a result of developers making constant improvements to the kernel code.
+
+Note 
+Sometimes, a fourth number is added to a kernel version to indicate a critical security or bug patch. For example, a 4.17.6.1 kernel is a 4.17.6 kernel with a critical patch number of 1.
+
+Modern Linux kernels that have a major, minor, and revision number are referred to as production kernels; they have been thoroughly tested by several Linux developers and are declared stable. Developmental kernels are not fully tested and imply instability; they are tested for vulnerabilities by people who develop Linux software. Most developmental kernels append the minor number with the letters -rc (release candidate) followed by a number that represents the version of the developmental kernel. For example, the 4.18-rc3 developmental kernel is the third release candidate for the 4.18 kernel; if Linux developers declare it stable after being thoroughly tested, it will become the 4.18.0 production kernel.
+
+Note 
+Until Linux kernel 2.6.0, an odd-numbered minor number was used to denote a development kernel, and an even-numbered minor number was used to denote a production kernel.
+
+Note 
+When choosing a kernel for a mission-critical computer such as a server, ensure that you choose a production kernel. This reduces the chance that you will encounter a bug in the kernel, which saves you the time needed to change kernels.
+
+Table 1-1 shows some sample kernel versions released since the initial release of Linux.
+
+Table 1-1 Sample Linux Kernel Version History
+Kernel version	Date released	Type
+0.01	September 1991	First Linux kernel
+0.12	January 1992	Production (stable)
+0.95	March 1992	Developmental
+0.98.6	December 1992	Production (stable)
+0.99.15	March 1994	Developmental
+1.0.8	April 1994	Production (stable)
+1.3.100	May 1996	Developmental
+2.0.36	November 1998	Production (stable)
+2.3.99	May 2000	Developmental
+2.4.17	December 2001	Production (stable)
+2.5.75	July 2003	Developmental
+2.6.35	August 2010	Production (stable)
+3.0.0	July 2011	Production (stable)
+3.2.21	June 2012	Production (stable)
+3.10.4	July 2013	Production (stable)
+3.15.10	August 2014	Production (stable)
+4.0.0	April 2015	Production (stable)
+4.6.3	March 2016	Production (stable)
+4.12.5	August 2017	Production (stable)
+4.18-rc3	July 2018	Developmental
+
+
+
+
+Licensing Linux
+Companies often choose Linux as their operating system because of the rules governing Linux licensing. Unlike most other operating systems, Linux is freely developed and continuously improved by a large community of software developers. For this reason, it is referred to as Open Source Software (OSS).
+
+To understand OSS, you must first understand how source code is used to create programs. Source code refers to the list of instructions that a software developer writes to make up a program; an example of source code is shown in Figure 1-3.
+
+Figure 1-3
+
+Source code
+
+After the software developer finishes writing the instructions, the source code is compiled into a format (called machine language) that only your computer’s processor can understand and execute. To edit an existing program, the software developer must edit the source code and then recompile it.
+
+The format and structure of source code follows certain rules defined by the programming language in which it was written. Programmers write Linux source code in many programming languages. After being compiled into machine language, all programs look the same to the computer operating system, regardless of the programming language in which they were written. As a result, software developers choose a programming language to create source code based on ease of use, functionality, and comfort level.
+
+The fact that Linux is an OSS operating system means that software developers can read other developers’ source code, modify that source code to make the software better, and redistribute that source code to other developers who might improve it further. Like all OSS, Linux source code must be distributed free of charge, regardless of the number of modifications made to it. People who develop OSS commonly use the Internet to share their source code, manage software projects, and submit comments and fixes for bugs (flaws). In this way, the Internet acts as the glue that binds together Linux developers in particular and OSS developers in general.
+
+Note 
+To read the complete open source definition, visit opensource.org.
+
+Here are some implications of the OSS way of developing software:
+
+Software is developed rapidly through widespread collaboration.
+
+Software bugs (errors) are noted and promptly fixed.
+
+Software features evolve quickly, based on users’ needs.
+
+The perceived value of the software increases because it is based on usefulness and not on price.
+
+As you can imagine, sharing ideas and source code is beneficial to software developers. However, a software company’s business model changes drastically when OSS enters the picture. The main issue is this: How can a product that is distributed freely generate revenue? After all, without revenue any company will go out of business.
+
+The OSS process of software development was never intended to generate revenue directly. Its goal was to help people design better software by eliminating many of the problems associated with traditional software development, which is typically driven by predefined corporate plans and rigid schedules. By contrast, OSS development assumes that software creation is an art in which a particular problem can be solved in many ways. One software developer might create a program that measures widgets using four pages of source code, while another developer might create a program that does the same task in one page of source code. You might think that this openness to multiple ways of solving a problem would result in a haphazard software development process, but the sharing of ideas that is the heart of OSS development keeps developers focused on the best possible solutions. Also, while OSS developers contribute their strengths to a project, they learn new techniques from other developers at the same time.
+
+Because the selling of software for profit discourages the free sharing of source code, OSS generates revenue indirectly. Companies usually make money by selling computer hardware that runs OSS, by selling customer support for OSS, or by creating closed source software programs that run on open source products such as Linux.
+
+The OSS development process is, of course, not the only way to develop and license software. Table 1-2 summarizes the types of software you are likely to encounter. The following section explains these types in more detail.
+
+Table 1-2 Software Types
+Type	Description
+Open source	Software in which the source code and software can be obtained free of charge and optionally modified to suit a particular need
+Closed source	Software in which the source code is not available; although this type of software might be distributed free of charge, it is usually quite costly and commonly referred to as commercial software
+Freeware	Closed source software that is given out free of charge; it is sometimes referred to as freemium software
+Shareware	Closed source software that is initially given out free of charge but that requires payment after a certain period of use
+Types of Open Source Licenses
+Linux adheres to the GNU General Public License (GPL), which was developed by the Free Software Foundation (FSF). The GPL stipulates that the source code of any software published under its license must be freely available. If someone modifies that source code, that person must also redistribute that source code freely, thereby keeping the source code free forever.
+
+Note 
+“GNU” stands for “GNUs Not UNIX.”
+
+Note 
+The GPL is freely available at www.gnu.org and in this book’s Appendix B, “GNU General Public License.”
+
+Another type of open source license is the artistic license, which ensures that the source code of the program is freely available yet allows the original author of the source code some control over the changes made to it. Thus, if one developer obtains and improves the source code of a program, the original author has the right to reject those improvements. As a result of this restriction, artistic licenses are rarely used because many developers do not want to work on potentially futile projects.
+
+In addition to the two open source licenses mentioned are other types of open source licenses that differ only slightly from one another. Those licenses must adhere to the open source definition but might contain extra conditions that the open source definition does not.
+
+Note 
+For a list of approved open source licenses, visit opensource.org.
+
+Types of Closed Source Licenses
+Closed source software can be distributed for free or for a cost; either way, the source code for the software is unavailable from the original developers. The majority of closed source software is sold commercially and bears the label of its manufacturer. Each of these software packages can contain a separate license that restricts free distribution of the program and its source code in many ways.
+
+Note 
+Examples of closed source software are software created by companies such as Microsoft, Apple, and Electronic Arts (EA).
+
+Another type of closed source software is freeware, in which the software program is distributed free of charge, yet the source code is unavailable. Freeware might also contain licenses that restrict the distribution of source code. Another approach to this style of closed source licensing is shareware, which is distributed free of charge, yet after a certain number of hours of usage or to gain certain features of the program, payment is required. Although freeware and shareware do not commonly distribute their source code under an open source license, some people incorrectly refer to freeware as OSS, assuming that the source code is free as well.
+
+Linux Advantages
+The main operating systems in use today include Linux, Microsoft Windows, UNIX, and macOS. Notably, Linux is the fastest growing operating system released to date. Although Linux was only created in 1991, the number of Linux users estimated by Red Hat in 1998 was 7.5 million, and the number of Linux users estimated by Google in 2010 was over 40 million (including the number of Linux-based Android smartphone and device users). In 2013,LinuxCounter.net (http://linuxcounter.net) estimated that the number of Linux users was over 70 million, and Google estimated that over 900 million Linux-based Android devices had shipped by then. Since 1998, many large companies, including IBM, Hewlett-Packard, Intel, and Dell, have announced support for Linux and OSS. In the year 2000, IBM announced plans to spend one billion dollars on Linux and Linux development alone.
+
+People have begun using Linux for many reasons. The following advantages are examined in the sections that follow:
+
+Risk reduction
+
+Meeting business needs
+
+Stability and security
+
+Flexibility for different hardware platforms
+
+Ease of customization
+
+Ease of obtaining support
+
+Cost reduction
+
+Risk Reduction
+Companies need software to perform mission-critical tasks, such as database tracking, Internet business (e-commerce), and data manipulation. However, changes in customer needs and market competition can cause the software a company uses to change frequently. Keeping the software up to date can be costly and time-consuming, but is a risk that companies must take. Imagine that a fictitious company, ABC Inc., buys a piece of software from a fictitious software vendor, ACME Inc., to integrate its sales and accounting information with customers via the Internet. What would happen if ACME went out of business or stopped supporting the software due to lack of sales? In either case, ABC would be using a product that had no software support, and any problems that ABC had with the software after that time would go unsolved and could result in lost revenue. In addition, all closed source software is eventually retired after it is purchased, forcing companies to buy new software every so often to obtain new features and maintain software support.
+
+If ABC instead chose to use an OSS product and the original developers became unavailable to maintain it, then the ABC staff would be free to take the source code, add features to it, and maintain it themselves provided the source code was redistributed free of charge. Also, most OSS does not retire after a short period of time because collaborative open source development results in constant software improvement geared to the needs of the users.
+
+Meeting Business Needs
+Recall that Linux is merely one product of open source development. Many thousands of OSS programs are available, and new ones are created daily by software developers worldwide. Most open source Internet tools have been developed for quite some time now, and the focus in the Linux community in the past few years has been on developing application software, cloud technologies, and security-focused network services that run on Linux. Almost all of this software is open source and freely available, compared to other operating systems, in which most software is closed source and costly.
+
+OSS is easy to locate on the Web, at sites such as SourceForge (sourceforge.net), GitHub (github.com), and GNU Savannah (savannah.gnu.org). New software is published to these sites daily. SourceForge alone hosts over 430,000 software development projects.
+
+Common software available for Linux includes but is not limited to the following:
+
+Scientific and engineering software
+
+Software emulators
+
+Web servers, Web browsers, and e-commerce suites
+
+Desktop productivity software (e.g., word processors, presentation software, spreadsheets)
+
+Graphics manipulation software
+
+Database software
+
+Security software
+
+In addition, companies that run the UNIX operating system (including macOS, which is a flavor of UNIX) might find it easy to migrate to Linux. For those companies, Linux supports most UNIX commands and standards, which eases a transition to Linux because the company likely would not need to purchase additional software or retrain staff. For example, suppose a company that tests scientific products has spent time and energy developing custom software that runs on the UNIX operating system. If this company transitions to another operating system, its staff would need to be retrained or hired, and much of the custom software would need to be rewritten and retested, which could result in a loss of customer confidence. If, however, that company transitions to Linux, the staff would require little retraining, and little of the custom software would need to be rewritten and retested, hence saving money and minimizing impact on consumer confidence.
+
+Companies that need to train staff on Linux usage and administration can take advantage of several educational resources and certification exams for various Linux skill levels. Certification benefits as well as the CompTIA Linux+ and LPIC-1 certifications are discussed in this book’s Appendix A, “Certification.”
+
+In addition, for companies that require a certain development environment or need to support custom software developed in the past, Linux provides support for most programming languages.
+
+Stability and Security
+OSS is developed by people who have a use for it. This collaboration among several developers with a common need speeds up software creation, and when bugs in the software are found by these users, bug fixes are created quickly. Often, the users who identify the bugs can fix the problem because they have the source code, or they can provide detailed descriptions of their problems so that other developers can fix them.
+
+By contrast, customers using closed source operating systems must rely on the operating system vendor to fix any bugs. Users of closed source operating systems must report the bug to the manufacturer and wait for the manufacturer to develop, test, and release a solution to the problem, known as a hot fix. This process might take weeks or even months, which is slow and costly for most companies and individuals. The thorough and collaborative open source approach to testing software and fixing software bugs increases the stability of Linux; it is not uncommon to find a Linux system that has been running continuously for months or even years without being turned off.
+
+Security, a vital concern for most companies and individuals, is another Linux strength. Because Linux source code is freely available and publicly scrutinized, security loopholes are quickly identified and fixed by several developers. In contrast, the source code for closed source operating systems is not released to the public for scrutiny, which means customers must rely on the OS vendor to provide security. A security breach unnoticed by the vendor can be exploited by the wrong person. Every day, new malicious software (destructive programs that exploit security loopholes, such as viruses and malware) is unleashed on the Internet with the goal of infiltrating closed source operating systems, such as Windows. By contrast, the number of viruses that can affect Linux is exceedingly low. As of April 2008, Linux had fewer than 100 known viruses, whereas Windows had more than 1,000,000 known viruses. Compared to other systems, the amount of malicious software for Linux systems remains incredibly low, and nearly all of it is designed to breach older versions of unprotected Linux-based Android smartphones. As a result, most desktop and server Linux systems that run antivirus and antimalware software today do so because they host files that may be shared with Windows computers.
+
+Note 
+For a list of recent malicious software, visit securelist.com.
+
+Flexibility for Different Hardware Platforms
+Another important feature of Linux is that it can run on a variety of computer hardware platforms frequently found in different companies. Although Linux is most commonly installed on the Intel x86/x64 platforms, it can also be installed on other types of hardware, such as the POWER platform from IBM that runs on many of the largest supercomputers in the world. Companies can run Linux on very large and expensive hardware for big tasks, such as graphics rendering or chemical molecular modeling, as well as on smaller systems, such as point-of-sale terminals and inventory scanners. Few other operating systems run on more than two hardware platforms, making Linux the ideal choice for companies that use different types of or specialized hardware.
+
+Here is a partial list of hardware platforms on which Linux can run:
+
+Intel x86/x64
+
+Itanium
+
+Mainframe (S/390, z/Architecture)
+
+ARM
+
+MIPS
+
+SPARC/Ultra-SPARC
+
+PowerPC/POWER
+
+In addition to the platforms in the preceding list, Linux can be customized to work on most hardware. Thousands of high-tech companies rely on embedded operating system technology to drive their systems. NASA spacecrafts, Internet routers and firewalls, Google Android smartphones and tablets, Amazon Kindle eBook readers, TomTom GPS navigation systems, smart thermostats, and Wi-Fi access points all run Linux. This focus on mobile and embedded devices will become more important as the need for new functionality increases. The rich set of OSS developers at work today makes Linux an attractive choice for manufacturers of mobile and embedded devices.
+
+Ease of Customization
+The ease of controlling the inner workings of Linux is another attractive feature, particularly for companies that need their operating system to perform specialized functions. If you want to use Linux as a Web server, you can simply recompile the Linux kernel to include only the support needed to be a Web server. This results in a much smaller and faster kernel.
+
+Note 
+A small kernel performs faster than a large kernel because it contains less code for the processor to analyze. On high-performance systems, you should remove any unnecessary features from the kernel to improve performance.
+
+Today, customizing and recompiling the Linux kernel is a well-documented and easy process; however, it is not the only way to customize Linux. Only software packages necessary to perform certain tasks need to be installed; thus, each Linux system can have a unique configuration and set of applications available to the user. Linux also supports several system programming languages, such as Shell and PERL, which you can use to automate tasks or create custom tasks.
+
+Consider a company that needs an application to copy a database file from one computer to another computer, yet also needs to manipulate the database file (perhaps by checking for duplicate records), summarize the file, and finally print it as a report. This might seem like a task that would require expensive software; however, in Linux, you can write a short PERL script that uses common Linux commands and programs to perform these tasks. This type of customization is invaluable to companies because it allows them to combine several existing applications to perform a certain task, which might be specific only to that company and, hence, not previously developed by another free software developer. Most Linux configurations present hundreds of small utilities, which, when combined with Shell or PERL programming, can make new programs that meet many business needs.
+
+Ease of Obtaining Support
+For those who are new to Linux, the Internet offers a world of Linux documentation. Frequently asked questions (FAQs) and instructions known as HOWTO documents are arranged by topic and are available to anyone. HOWTO documents are maintained by their authors yet are centrally collected by the Linux Documentation Project (LDP), which has several hundred websites worldwide that allow you to search or download HOWTO documents.
+
+A search of the word “HOWTO” on a typical Internet search engine such as www.google.com displays thousands of results, or you can download the worldwide collection of HOWTO documents at www.tldp.org.
+
+In addition, several Internet newsgroups allow Linux users to post messages and reply to previously posted messages. If you have a specific problem with Linux, you can post your problem on an Internet newsgroup and receive help from those who know the solution. Linux newsgroups are posted to frequently; thus, you can usually expect a solution to a problem within hours. A list of common Linux newsgroups can be found at http://groups.google.com.
+
+An alternative to Internet newsgroups include Linux-focused Facebook groups and website forums. Appendix C, “Finding Linux Resources on the Internet,” describes how to navigate Internet resources and lists some resources that you might find useful.
+
+Although online support is the typical method of getting help, other methods are available. Most Linux distributions provide professional telephone support services for a modest fee, and many organizations give free support to those who ask. The most common of these groups are referred to as Linux User Groups (LUGs), and most large cities across the globe have at least one. LUGs are groups of Linux users who meet regularly to discuss Linux-related issues and problems. An average LUG meeting consists of several new Linux users (also known as Linux newbies), administrators, developers, and experts (also known as Linux gurus). LUG meetings are a resource to solve problems and learn about the local Linux community. Most LUGs host websites that contain a multitude of Linux resources, including summaries of past meetings and discussions. One common activity seen at a LUG meeting is referred to as an Installfest; several members bring in their computer equipment to install Linux and other Linux-related software. This approach to transferring knowledge is very valuable to LUG members because concepts can be demonstrated and the solutions to problems can be modeled by more experienced Linux users.
+
+Note 
+To find a list of available LUGs in your region, search for the words “LUG cityname” on an Internet search engine such as www.google.com (substituting your city’s name for “cityname”). When searching for a LUG, keep in mind that LUGs might go by several different names; for example, the LUG in Hamilton, Ontario, Canada is known as HLUG (Hamilton Linux Users Group). Many LUGs today are managed using Facebook groups or meeting sites such as www.meetup.com.
+
+Cost Reduction
+Linux is less expensive than other operating systems such as Windows because there is no cost associated with acquiring the software. In addition, a wealth of OSS can run on different hardware platforms running Linux, and a large community of developers is available to diagnose and fix bugs in a short period of time for free. While Linux and the Linux source code are distributed freely, implementing Linux is not cost free. Costs include purchasing the computer hardware necessary for the computers hosting Linux, hiring people to install and maintain Linux, and training users of Linux software.
+
+The largest costs associated with Linux are the costs associated with hiring people to maintain the Linux system. However, closed source operating systems have this cost in addition to the cost of the operating system itself. The overall cost of using a particular operating system is known as the total cost of ownership (TCO). Table 1-3 shows an example of the factors involved in calculating the TCO for operating systems.
+
+Table 1-3 Calculating the Total Cost of Ownership
+Costs	Linux	Closed source operating system
+Operating system cost	$0	Greater than $0
+Cost of administration	Low: Stability is high and bugs are fixed quickly by open source developers.	Moderate/high: Bug fixes are created by the vendor of the operating system, which could result in costly downtime.
+Cost of additional software	Low/none: Most software available for Linux is also open source.	Moderate/high: Most software available for closed source operating systems is also closed source.
+Cost of software upgrades	Low/none	Moderate/high: Closed source software is eventually retired, and companies must buy upgrades or new products to gain functionality and stay competitive.
+
+The History of Linux
+Linux is based on the UNIX operating system developed by Ken Thompson and Dennis Ritchie of AT&T Bell Laboratories in 1969 and was developed through the efforts of many people as a result of the hacker culture that formed in the 1980s. Therefore, to understand how and why Linux emerged on the operating system market, you must first understand UNIX and the hacker culture. Figure 1-4 illustrates a timeline representing the history of the UNIX and Linux operating systems.
+
+Figure 1-4
+
+Details
+Timeline of UNIX and Linux development
+
+UNIX
+The UNIX operating system has roots running back to 1965, when the Massachusetts Institute of Technology (MIT), General Electric, and AT&T Bell Laboratories began developing an operating system called Multiplexed Information and Computing Service (MULTICS). MULTICS was a test project intended to reveal better ways of developing time-sharing operating systems, in which the operating system regulates the amount of time each process has to use the processor. The project was abandoned in 1969. However, Ken Thompson, who had worked on the MULTICS operating system, continued to experiment with operating systems. In 1969, he developed an operating system called UNIX that ran on the DEC (Digital Equipment Corporation) PDP-7 computer.
+
+Shortly thereafter, Dennis Ritchie invented the C programming language that was used on Ken Thompson’s UNIX operating system. The C programming language was a revolutionary language. Most programs at the time needed to be written specifically for the hardware of the computer, which involved referencing volumes of information regarding the hardware in order to write a simple program. However, the C programming language was much easier to use to write programs, and it was possible to run a program on different machines without having to rewrite the code. The UNIX operating system was rewritten in the C programming language, and by the late-1970s, the UNIX operating system ran on different hardware platforms, something that the computing world had never seen until that time. Hence, people called UNIX a portable operating system.
+
+Unfortunately, the company Ken Thompson and Dennis Ritchie worked for (AT&T) was restricted by a federal court order from marketing UNIX. In an attempt to keep UNIX viable, AT&T sold the UNIX source code to several companies, encouraging them to agree to standards among them. Each of these companies developed its own variety, or flavor, of UNIX yet adhered to standards agreed upon by all. AT&T also gave free copies of the UNIX source code to certain universities to promote widespread development of UNIX. One result was a UNIX version developed at the University of California, Berkeley in the early 1980s known as BSD (Berkeley Software Distribution). In 1982, one of the companies to whom AT&T sold UNIX source code (Sun Microsystems) marketed UNIX on relatively inexpensive hardware and sold thousands of computers that ran UNIX to companies and universities.
+
+Throughout the 1980s, UNIX found its place primarily in large corporations that had enough money to purchase the expensive computing equipment needed to run UNIX (usually a DEC PDP-11, VAX, or Sun Microsystems computer). A typical UNIX system in the 1980s could cost over $100,000, yet it performed thousands of tasks for client computers (also known as dumb terminals). Today, UNIX still functions in that environment; many large companies employ different flavors of UNIX for their heavy-duty, mission-critical tasks, such as e-commerce and database hosting. Common flavors of UNIX today include BSD, Hewlett-Packard’s HP-UX, IBM’s AIX, as well as Apple’s macOS and iOS operating systems.
+
+UNIX
+The UNIX operating system has roots running back to 1965, when the Massachusetts Institute of Technology (MIT), General Electric, and AT&T Bell Laboratories began developing an operating system called Multiplexed Information and Computing Service (MULTICS). MULTICS was a test project intended to reveal better ways of developing time-sharing operating systems, in which the operating system regulates the amount of time each process has to use the processor. The project was abandoned in 1969. However, Ken Thompson, who had worked on the MULTICS operating system, continued to experiment with operating systems. In 1969, he developed an operating system called UNIX that ran on the DEC (Digital Equipment Corporation) PDP-7 computer.
+
+Shortly thereafter, Dennis Ritchie invented the C programming language that was used on Ken Thompson’s UNIX operating system. The C programming language was a revolutionary language. Most programs at the time needed to be written specifically for the hardware of the computer, which involved referencing volumes of information regarding the hardware in order to write a simple program. However, the C programming language was much easier to use to write programs, and it was possible to run a program on different machines without having to rewrite the code. The UNIX operating system was rewritten in the C programming language, and by the late-1970s, the UNIX operating system ran on different hardware platforms, something that the computing world had never seen until that time. Hence, people called UNIX a portable operating system.
+
+Unfortunately, the company Ken Thompson and Dennis Ritchie worked for (AT&T) was restricted by a federal court order from marketing UNIX. In an attempt to keep UNIX viable, AT&T sold the UNIX source code to several companies, encouraging them to agree to standards among them. Each of these companies developed its own variety, or flavor, of UNIX yet adhered to standards agreed upon by all. AT&T also gave free copies of the UNIX source code to certain universities to promote widespread development of UNIX. One result was a UNIX version developed at the University of California, Berkeley in the early 1980s known as BSD (Berkeley Software Distribution). In 1982, one of the companies to whom AT&T sold UNIX source code (Sun Microsystems) marketed UNIX on relatively inexpensive hardware and sold thousands of computers that ran UNIX to companies and universities.
+
+Throughout the 1980s, UNIX found its place primarily in large corporations that had enough money to purchase the expensive computing equipment needed to run UNIX (usually a DEC PDP-11, VAX, or Sun Microsystems computer). A typical UNIX system in the 1980s could cost over $100,000, yet it performed thousands of tasks for client computers (also known as dumb terminals). Today, UNIX still functions in that environment; many large companies employ different flavors of UNIX for their heavy-duty, mission-critical tasks, such as e-commerce and database hosting. Common flavors of UNIX today include BSD, Hewlett-Packard’s HP-UX, IBM’s AIX, as well as Apple’s macOS and iOS operating systems.
+
+Linux
+Although Richard Stallman started the GNU Project to make a free operating system, the GNU operating system never took off. Much of the experience gained by hackers developing the GNU Project was later pooled into Linux. A Finnish student named Linus Torvalds first developed Linux in 1991 when he was experimenting with improving MINIX (Mini-UNIX, a small educational version of UNIX developed by Andrew Tannenbaum) for the Intel x86 platform. The Intel x86 platform was fast becoming standard in homes and businesses around the world and was a good choice for any free development at the time. The key feature of the Linux operating system that attracted the development efforts of the hacker culture was that Torvalds had published Linux under the GNU Public License.
+
+Since 1991, when the source code for Linux was released, the number of software developers dedicated to improving Linux has increased each year. The Linux kernel was developed collaboratively and was centrally managed; however, many Linux add-on packages were developed freely worldwide by those members of the hacker culture who were interested in their release. Linux was a convenient focal point for free software developers. During the early-to-mid-1990s, Linux development proceeded at full speed, with hackers contributing their time to what turned into a large-scale development project. All of this effort resulted in several distributions of Linux. A distribution of Linux is a collection or bundle of software containing the commonly developed Linux operating system kernel and libraries, combined with add-on software specific to a certain use. Well-known distributions of Linux include Red Hat, openSUSE, Debian, Ubuntu, Gentoo, Linux Mint, and Arch.
+
+This branding of Linux did not imply the fragmentation that UNIX experienced in the late-1980s. All distributions of Linux had a common kernel and utilities. Their blend of add-on packages simply made them look different on the surface. Linux still derived its usefulness from collaborative development.
+
+Linux development continued to expand throughout the late-1990s as more developers grew familiar with the form of collaborative software development advocated by the hacker culture. By 1998, when the term “OSS” first came into use, there were already many thousands of OSS developers worldwide. Small companies formed to offer Linux solutions for business. People invested in these companies by buying stock in them. Unfortunately, this trend was short-lived. By the year 2000, most of these companies had vanished. At the same time, the OSS movement caught the attention and support of large companies (such as IBM, Compaq, Dell, and Hewlett-Packard), and there was a shift in Linux development over the following decade to support the larger computing environments and mobile devices.
+
+It is important to note that Linux is a by-product of OSS development. Recall that the OSS developers are still members of the hacker culture and, as such, are intrinsically motivated to develop software that has an important use. Thus, OSS development has changed over time; in the 1980s, the hacker culture concentrated on developing Internet and programming tools, whereas in the 1990s, it focused on developing the Linux operating system. Since 2000, interest has grown in embedded Linux (Linux OSes that run on smaller hardware devices such as mobile devices) and developing cloud- and security-focused application programs for use on the Linux operating system. Because Linux is currently very well developed, even more application development can be expected from the OSS community in the next decade.
+
+Note 
+For more information on the free software movement and the development of Linux, watch the 2001 television documentary Revolution OS (available on YouTube). It features interviews with Linus Torvalds, Richard Stallman, and Eric S. Raymond.
+
+Linux Distributions
+It is time-consuming and inefficient to obtain Linux by first downloading and installing the Linux kernel and then adding desired OSS packages. Instead, it’s more common to download a distribution of Linux containing the Linux kernel, common function libraries, and a series of OSS packages.
+
+Note 
+Remember that although Linux distributions appear different on the surface, they run the same kernel and contain many of the same packages.
+
+Despite the fact that varied distributions of Linux are essentially the same under the surface, they do have important differences. Different distributions might support different hardware platforms. Also, Linux distributions include predefined sets of software; some Linux distributions include many server-related tools, such as Web servers and database servers, whereas others include numerous workstation and development software applications. Still others might include a complete set of open source tools that you can use to customize a Linux system to perform specific functions. In that case, you simply choose the open source tools you want to install. For example, you might choose to install a database server.
+
+While Linux distributions use the same Linux kernel versions that are community developed, they can modify those kernels in order to provide fixes and optimizations that are specific to the distribution and used for long-term support. These are called distribution kernels, and list a patch version and distribution identifier following the major, minor, and revision number. For example, the 4.17.6-100.fc28.x86_64 kernel is distribution release 100 of the Linux 4.17.6 production kernel used on a 64-bit (x86_64) version of the Fedora Linux 28 distribution (fc28).
+
+Linux distributions that include many specialized tools might not contain a GUI; an example of this is a Linux distribution that fits within a single small flash memory chip and can be used as a home Internet router. Most distributions, however, do include a GUI that can be further customized to suit the needs of the user.
+
+The core component of the GUI in Linux is referred to as X Windows. The original implementation of X Windows on Linux was called XFree86 but has since been replaced by X.org and Wayland. X.org is the latest implementation of X Windows based on the original MIT X Windows project that was released as OSS in 2004, and Wayland is an alternative to X.org that was designed to be easier to develop and maintain. In addition to X Windows, several Linux window managers and desktop environments are available, which together affect the look and feel of the Linux GUI. X Windows in combination with a window manager and desktop environment is referred to as a GUI environment. The two main competing GUI environments available in Linux are the GNU Network Object Model Environment (GNOME) and the K Desktop Environment (KDE). These two GUI environments are more or less comparable in functionality, although users might have a personal preference for one desktop over the other. This is often the case when a company wants to do a great deal of software development in the GUI environment; the GNOME desktop, written in the C programming language, uses the widely available gtk toolkit, whereas the KDE desktop, written in the C++ programming language, uses the qt toolkit. The language and toolkit that best fits a company’s need will be the one preferred at that time. Most common Linux distributions ship with both GNOME and KDE GUI environments, whereas others offer support for both so that either GUI environment can be easily downloaded and installed. Figures 1-5 and 1-6 compare these two GUI environments.
+
+Figure 1-5
+
+Details
+The GNOME desktop
+
+Figure 1-6
+
+The KDE desktop
+
+Note 
+In addition to GNOME and KDE, several other desktop environments are available to Linux systems. One example is Cinnamon, which is a desktop derived from GNOME that is particularly easy to use. Another example is XFCE, which is a lightweight desktop environment designed for Linux systems with few CPU and RAM resources.
+
+Although the differences between Linux distributions can help narrow the choice of Linux distributions to install, one of the most profound reasons companies choose one distribution over another is support for package managers. A package manager is a software system that installs and maintains software. It keeps track of installed software, requires a standard format and documentation, and can manage and remove software from a system by recording all relevant software information in a central software database on your computer.
+
+Note 
+A package manager in Linux is similar to the Apps and Features or Programs and Features section in the Windows Settings or Control Panel apps, respectively.
+
+One of the most widely supported package managers is the Red Hat Package Manager (RPM). Most Linux software is available in RPM format, and the RPM is standard on many Linux distributions that were originally derived from the Red Hat Linux distribution. The Debian Package Manager (DPM) is also very common today; it offers the same advantages as the RPM but for systems that were originally derived from the Debian Linux distribution. Other, less common package managers available for Linux include Pacman (Arch Linux), Zypper (openSUSE Linux), and Portage (Gentoo Linux). In addition to obtaining software in package manager format, you can download software in tarball format. A tarball is a compressed archive of files, like WinZip or RAR files, usually containing scripts that install the software contents to the correct location on the system, or source code that can be compiled into a working program and copied to the system. Unfortunately, tarballs do not update a central software database and, as a result, are very difficult to manage, upgrade, or remove from the system. Traditionally, most Linux software was available in tarball format, but package managers have since become the standard method for installing software.
+
+Note 
+For a list of common Linux distributions, visit www.linux.org.
+
+Anyone can create a Linux distribution by packaging OSS with the Linux kernel. As a result, over 500 Linux distributions are publicly registered. Many are small, specialized distributions designed to fulfill certain functions, but some are mainstream Linux distributions used widely throughout the computing world. Typically, a distribution is associated with a website from which the distribution can be downloaded for free. In addition, most Linux distributions can be obtained from other websites, such as iso.linuxquestions.org. Some distributions of Linux are also available on DVDs for a small fee from computer stores and websites; however, downloading from the Internet is the most common method of obtaining Linux.
+
+Table 1-4 briefly describes some mainstream Linux distributions, their features, and where to find them on the Internet.
+
+Table 1-4 Common Linux Distributions
+Distribution	Features	Platforms	Location
+Red Hat
+
+One of the earliest Linux distributions, and one that is commonly used within organizations today. Two distributions of Red Hat are available: the Enterprise distribution geared for enterprise environments and the Fedora distribution geared for all environments (servers, desktops, laptops, etc.). Both editions ship with the RPM package manager and GNOME as the default desktop environment.
+
+x86/x64
+
+PPC/POWER
+
+Mainframe
+
+ARM
+
+www.redhat.com getfedora.org
+
+openSUSE
+
+Originally developed primarily in Europe, openSUSE is the oldest business-focused Linux distribution. Novell purchased the distribution to replace its NetWare OS and distributes enterprise versions of openSUSE.
+
+x86/x64
+
+PPC/POWER
+
+ARM
+
+www.opensuse.org www.suse.com
+
+Debian
+
+Offering the largest number of customization options of all Linux distributions, Debian Linux contains software packages for any use and supports nearly all languages and hardware platforms.
+
+x86/x64
+
+PPC/POWER
+
+Mainframe
+
+ARM
+
+MIPS
+
+www.debian.org
+
+Ubuntu
+
+A Debian-based distribution that is widely used in all environments, Ubuntu is designed to be easy to use and supports nearly all hardware, including mobile computing devices.
+
+x86/x64
+
+PPC/POWER
+
+Mainframe
+
+ARM
+
+www.ubuntu.com
+
+Gentoo
+
+A Linux distribution that focuses on hardware and software optimization. Each program and part of the operating system on a Gentoo system is compiled specifically for the hardware on the particular system and optimized for that hardware during the process.
+
+x86/x64
+
+PPC/POWER
+
+ARM
+
+www.gentoo.org
+
+Linux Mint
+
+A relatively new and easy-to-use Linux distribution that is focused on providing desktop and mobile user capabilities.
+
+x86/x64
+
+www.linuxmint.com
+
+Arch
+
+A very lightweight and customizable Linux distribution. Due to its focus on simplicity and customization, it is often used within specialized environments and on small footprint systems.
+
+x86/x64
+
+www.archlinux.org
+
+Key Terms
+AIX
+Android
+application (app)
+Arch
+artistic license
+asymmetric encryption
+authentication
+Beowulf clustering
+BSD (Berkeley Software Distribution)
+certificate
+Certification Authority (CA)
+closed source software
+cloud
+cloud platform
+cloud provider
+cluster
+clustering
+container
+cracker
+cybersecurity
+database
+Database Management System (DBMS)
+Debian
+developmental kernel
+device driver
+digital signature
+distribution
+distribution kernel
+Domain Name Space (DNS)
+Dynamic Host Configuration Protocol (DHCP)
+flavor
+Free Software Foundation (FSF)
+freeware
+frequently asked questions (FAQs)
+fully qualified domain name (FQDN)
+Gentoo
+GNU
+GNU General Public License (GPL)
+GNU Network Object Model Environment (GNOME)
+GNU Project
+graphical user interface (GUI)
+GUI environment
+hacker
+hardware
+hardware platform
+hot fix
+HOWTO
+HP-UX
+Infrastructure as a Service (IaaS)
+Internet Protocol (IP) address
+iOS
+K Desktop Environment (KDE)
+Kerberos
+kernel
+key
+Linus Torvalds
+Linux
+Linux Documentation Project (LDP)
+Linux Mint
+Linux User Group (LUG)
+load balancing
+macOS
+Mail Delivery Agent (MDA)
+Mail Transfer Agent (MTA)
+Mail User Agent (MUA)
+major number
+Message Passing Interface (MPI)
+MINIX
+minor number
+Multiplexed Information and Computing Service (MULTICS)
+multitasking
+multiuser
+Network Time Protocol (NTP)
+newsgroup
+Next Generation Firewall (NGFW)
+Open Source Software (OSS)
+openSUSE
+operating system (OS)
+package manager
+penetration test
+Platform as a Service (PaaS)
+private cloud
+private key
+process
+production kernel
+program
+programming language
+proxy server
+public key
+Public Key Infrastructure (PKI)
+Red Hat
+revision number
+router
+scalability
+search engine
+security appliance
+server
+server services
+shareware
+software
+Software as a Service (SaaS)
+source code
+symmetric encryption
+system service
+tarball
+total cost of ownership (TCO)
+Ubuntu
+Unified Threat Management (UTM)
+UNIX
+user
+user interface
+vulnerability assessment
+workstation
+workstation services
+X Windows
+
+
+Chapter 2. Linux Installation and Usage
+After completing this chapter, you will be able to:
+
+Prepare for and install Fedora Linux using good practices
+Outline the structure of the Linux interface
+Enter basic shell commands and find command documentation
+Properly shut down the Linux operating system
+This chapter explores the concepts and procedures needed to install a Fedora Linux system. The latter half of the chapter presents an overview of the various components that you will use when interacting with the operating system, as well as how to enter basic shell commands, obtain help, and properly shut down the Linux system.
+
+Installing Linux
+Installing Linux requires careful planning as well as configuring parts of the Linux operating system via an installation program.
+
+Preparing for Installation
+An operating system is merely a series of software programs that interact with and control the computer hardware. Thus, all operating systems have a certain minimum set of computer hardware requirements to function properly. Although most up-to-date hardware is sufficient to run the Linux operating system, it is, nonetheless, important to ensure that a computer meets the minimum hardware requirements before performing an installation.
+
+These minimum installation requirements can be obtained from several sources. If you obtained the operating system on DVD, a printed manual or file on the DVD might specify these requirements. You can also find the minimum hardware requirements for most operating systems on the vendor’s website. For the Fedora 28 Linux operating system, you can find the minimum hardware requirements at docs.fedoraproject.org or in Table 2-1.
+
+Table 2-1 Fedora 28 Recommended Minimum Hardware Requirements
+Type of hardware	Requirement
+Central processing unit (CPU)	1GHz or faster Intel x64 CPU
+Random access memory (RAM)	1GB
+Free disk space (permanent storage)	10GB free space
+Additional drives	DVD drive (for DVD-based installation)
+Peripheral devices	Fedora-compliant peripheral devices (e.g., video cards, sound cards, network cards)
+Furthermore, each operating system supports only particular types of hardware components. While modern Linux distributions support nearly all hardware components available on the market, it’s good practice to check a hardware vendor’s website to see whether uncommon components are compatible with Linux. Additionally, many Linux distribution websites and computer manufacturer websites have a Linux Hardware Compatibility List (HCL) that identifies whether the computer and hardware have Linux driver support.
+
+Note 
+You can visit linux-drivers.org to locate hardware and distribution-specific HC
+
+Understanding Installation Media
+Before performing a Linux installation, you must choose the source of the Linux packages and the installation program itself. The most common source of these packages is DVD media.
+
+To install from DVD, you place the Linux DVD in the DVD drive and turn on the computer. Most computers automatically search for a startup program on the DVD immediately after being turned on; the computer can then use the DVD to start the Linux installation. Alternatively, most modern computers allow you to manually select the boot device using a special manufacturer-specific key, such as F12, during the startup sequence.
+
+Note 
+Turning on a computer to load an operating system is commonly referred to as booting a computer. Because the Linux installation program on DVD can be loaded when you first turn on the computer, it is referred to as a bootable DVD.
+
+Nearly all Linux distributions provide a website from which you can download DVD images (called ISO images) that have an .iso file extension. These ISO images can be written to a blank writable DVD using disc burning software on a Windows, Linux, or Macintosh computer and then used to boot your computer to start the Linux installation.
+
+In addition to a standard Linux installation DVD image, many Linux distribution websites allow you to download a bootable live media DVD image. If you write a live media DVD image to a blank DVD and boot your computer with it, a fully functional graphical Linux operating system that you can use will be loaded into RAM. This allows you to test the operating system on your computer to ensure that all hardware drivers were detected properly before installing it to permanent storage, such as hard disk or solid-state drive (SSD). After you are satisfied with the functionality of your Linux system loaded from live media, you can select the appropriate icon on the desktop to start the installation program that will install the Linux system to permanent storage.
+
+Note 
+To obtain a standard DVD image or live media DVD image of Fedora 28, you can visit getfedora.org.
+
+If your computer does not have a DVD drive, you can still install Linux by imaging the standard DVD or live media DVD ISO image to a USB flash drive, provided that your computer supports booting from USB flash drive media. To make this process easier, many distributions provide a program and instructions that can be used to perform the imaging process. For Fedora Linux, you can download and install the Fedora Media Writer tool on a Windows or Macintosh system, as shown in Figure 2-1. If you click Custom image, the Fedora Media Writer tool allows you to download the latest version of Fedora Workstation or Fedora Server as well as image an already downloaded DVD ISO image of Fedora to a USB flash drive. After clicking Custom image, you select the appropriate DVD ISO image and target USB flash drive, and then click Write to disk to start the imaging process.
+
+Figure 2-1
+
+Details
+The Fedora Media Writer tool
+
+Note 
+You can download the Fedora Media Writer tool from getfedora.org/workstation/download/.
+
+After the imaging process is complete, you can insert your USB flash drive into a free USB slot, turn on your computer, use the appropriate key for your computer to select the target boot device (e.g., F12), and then choose the option to boot from your USB flash drive.
+
+Many server and workstation computers today can run multiple operating systems concurrently using virtualization software. Several virtualization software products are available on the market today, including:
+
+Microsoft Hyper-V
+
+VMWare
+
+Oracle VM VirtualBox
+
+Each operating system that is run within virtualization software is called a virtual machine, and the underlying operating system running the virtualization software is called the virtual machine host. Figure 2-2 shows a Fedora Linux virtual machine running on the Windows 10 operating system using the Microsoft Hyper-V virtualization software.
+
+Figure 2-2
+
+Details
+Fedora Linux running as a virtual machine on the Windows 10 operating system
+
+Note 
+Most enterprise environments today take advantage of virtualization software to run multiple server operating systems concurrently on the same computer hardware. This allows organizations to better utilize their server hardware and reduce costs. Chapter 6 discusses this use of virtualization.
+
+To install Linux as a virtual machine, you need to download the standard DVD or live media DVD ISO image to a directory on your virtual machine host (e.g., Windows). When you open the virtualization software and choose to create a new virtual machine, you can specify the file location of the appropriate ISO image, and the virtualization software will boot from the ISO image directly, without requiring you to write the ISO image to a DVD or a USB flash drive. Figure 2-3 shows the section of the Hyper-V New Virtual Machine Wizard that allows you to specify the location of an ISO image containing the Fedora 28 installation media.
+
+Figure 2-3
+
+Details
+Selecting installation media within the Hyper-V New Virtual Machine Wizard
+
+Performing the Installation
+Installing the Linux operating system involves interacting with an installation program, which prompts you for information regarding the nature of the Linux system being installed. More specifically, the installation program for Fedora 28 Linux involves the following general stages:
+
+Starting the installation
+
+Choosing an installation language, localization, and system options
+
+Configuring disk partitions and filesystems
+
+Configuring user accounts
+
+Starting the Installation
+As mentioned earlier, to perform an installation of Fedora Linux, you can boot your computer using Fedora installation media. If you are booting your system from standard Fedora installation media, you will be prompted to start the installation or perform troubleshooting actions. However, if you boot your system from Fedora live media, you will instead be prompted to start a live Fedora system (which later allows you to install Fedora), test your installation media, and start a live Fedora system or perform troubleshooting actions, as shown in Figure 2-4.
+
+Figure 2-4
+
+Details
+Beginning a Fedora installation
+
+If you select the Troubleshooting option shown in Figure 2-4, you will be presented with four additional options, as shown in Figure 2-5.
+
+Figure 2-5
+
+Details
+Fedora installation troubleshooting options
+
+Selecting Start Fedora-Workstation-Live 28 in basic graphics mode shown in Figure 2-5 will start the Fedora system with generic video drivers and low resolution, which is useful if the live Fedora system doesn’t detect the correct driver for your video card and cannot display a graphical desktop as a result.
+
+Defective RAM is a common cause of a failed Linux installation. If you select Run a memory test shown in Figure 2-5, the memtest86 utility will start and perform a thorough check of your RAM for hardware errors, as shown in Figure 2-6.
+
+Figure 2-6
+
+Details
+The memtest86 utility
+
+The Boot from local drive option shown in Figure 2-5 is useful if you forget to remove your Fedora installation media after the installation has completed and your system is configured to boot an operating system from your DVD or USB drive before searching for an operating system on permanent storage.
+
+In most cases, the troubleshooting options shown in Figure 2-5 aren’t necessary when installing Fedora Linux. As a result, you can choose Start Fedora-Workstation-Live 28 shown in Figure 2-4 to start a live Fedora system. After the live Fedora system has loaded, you will be presented with a welcome screen that prompts you to install Fedora Linux on permanent storage or continue using the live Fedora system loaded from your installation media, as shown in Figure 2-7.
+
+Figure 2-7
+
+Details
+The Welcome to Fedora screen
+
+If you choose Install to Hard Drive in Figure 2-7, the Fedora installation program will start. Alternatively, if you choose Try Fedora, you will be able to explore the desktop of a live Fedora system and can later select Install to Hard Drive from the Activities menu in the upper-left corner of the desktop to start the Fedora installation program.
+
+Choosing an Installation Language, Localization, and System Options
+After you start a Fedora installation, you will be prompted to select a language that is used during the installation program, as shown in Figure 2-8. If you click Continue, you will be prompted to configure the date and time, keyboard layout, and installation destination (e.g., hard disk, SSD) as shown in Figure 2-9.
+
+Figure 2-8
+
+Details
+Selecting an installation language
+
+Figure 2-9
+
+Details
+Configuring localization and system options
+
+You can click each of the localization and system option icons in Figure 2-9 to modify the configuration. By default, your keyboard layout is automatically detected, your network interface is set to obtain network configuration using the DHCP protocol, and the date and time are obtained from the Internet if your network has Internet connectivity. However, you must manually review the installation destination settings before the installation can continue (hence the warning shown in Figure 2-9). The installation destination is a permanent storage device that will contain the Linux operating system; it is often a hard disk or an SSD.
+
+Older systems often use Parallel Advanced Technology Attachment (PATA) hard disks that physically connect to the computer in one of four configurations. As shown in Table 2-2, Linux refers to each of these disks according to its configuration on your computer.
+
+Table 2-2 PATA Hard Disk Configurations
+Description	Linux name
+Primary master PATA hard disk	hda
+Primary slave PATA hard disk	hdb
+Secondary master PATA hard disk	hdc
+Secondary slave PATA hard disk	hdd
+Note 
+In the past, PATA hard disks were referred to as Integrated Drive Electronics (IDE) or Advanced Technology Attachment (ATA) hard disks.
+
+Note 
+You can verify your PATA disk configuration by accessing your computer’s Basic Input/Output System (BIOS) configuration. You can access your BIOS configuration by pressing the appropriate manufacturer-specific key, such as F10, during system startup.
+
+Newer systems typically use Serial Advanced Technology Attachment (SATA) hard disks or SSDs or Non-Volatile Memory Express (NVMe) SSDs. Server systems have traditionally used Small Computer Systems Interface (SCSI) hard disks, and many server systems today use Serial Attached SCSI (SAS) hard disks or SSDs. Unlike PATA, you can have more than four SATA, NVMe, SCSI, and SAS hard disks or SSDs within a system. The first SATA/SCSI/SAS hard disk or SSD is referred to as sda, the second SATA/SCSI/SAS hard disk or SSD is referred to as sdb, and so on. The first NVMe SSD is referred to as nvme0, the second NVMe SSD is referred to as nvme1, and so on.
+
+If you click the installation destination icon shown in Figure 2-9, you will be presented with a list of the permanent storage devices in your system. The system shown in Figure 2-10 contains a single SATA hard disk (sda).
+
+Figure 2-10
+
+Details
+Configuring an installation destination
+
+If you have multiple disk devices, you can select the disk that will be used to contain the Fedora Linux operating system and then click Done. Normally, this is a local hard disk or SSD, but you can also install Linux on an external iSCSI or FCoE Storage Area Network (SAN), Direct Access Storage Device (DASD), Multipath IO (MPIO), or firmware Redundant Array of Inexpensive Disks (RAID) device if you select Add a disk shown in Figure 2-10 and supply the appropriate configuration information.
+
+Configuring Disk Partitions and Filesystems
+Regardless of type, each hard disk or SSD is divided into sections called partitions. Before you can store files in a partition, you must format it with a filesystem. A filesystem is a structure that specifies how data should reside on the hard disk or SSD itself.
+
+Note 
+In the Windows operating system, each drive letter (e.g., C:, D:, E:) can correspond to a separate filesystem that resides on a partition on your hard disk or SSD.
+
+There are limits to the number and types of partitions into which a hard disk or an SSD can be divided. By default, you can create a maximum of four major partitions (called primary partitions). To overcome this limitation, you can optionally label one of these primary partitions as “extended”; this extended partition can then contain an unlimited number of smaller partitions called logical drives. Each logical drive within the extended partition and all other primary partitions can contain a filesystem and be used to store data. The table of all partition information for a certain hard disk or an SSD is stored in the first readable sector outside all partitions; it is called the Master Boot Record (MBR). The MBR is limited to devices that are less than 2TB in size. Newer devices and devices larger than 2TB use a GUID Partition Table (GPT) instead of an MBR.
+
+Note 
+The MBR and GPT are functionally equivalent.
+
+Recall that, in Linux, the first SATA/SCSI/SAS device in your system is referred to as sda, the first primary partition on this device is labeled sda1, the second sda2, and so on. Because only four primary partitions are allowed on an MBR disk, logical drives inside the extended partition are labeled sda5, sda6, and so on. An example of this partition strategy is listed in Table 2-3.
+
+Table 2-3 Example MBR Partitioning Scheme for the First SATA/SCSI/SAS Device
+Description	Linux name	Windows name
+First primary partition on the first SATA/SCSI/SAS device	sda1	C:
+Second primary partition on the first SATA/SCSI/SAS device	sda2	D:
+Third primary partition on the first SATA/SCSI/SAS device	sda3	E:
+Fourth primary partition on the first SATA/SCSI/SAS device (EXTENDED)	sda4	F:
+First logical drive in the extended partition on the first SATA/SCSI/SAS device	sda5	G:
+Second logical drive in the extended partition on the first SATA/SCSI/SAS device	sda6	H:
+Third logical drive in the extended partition on the first SATA/SCSI/SAS device	sda7	I:
+Note 
+For the primary master PATA device, replace sda with hda in Table 2-3. NVMe devices can use namespace divisions in addition to partitions. As a result, the first NVMe partition (p1) within the first namespace (n1) on the first NVMe SSD (nvme0) would be called nvme0n1p1.
+
+Note 
+For devices that use a GPT instead of an MBR, there is no primary partition limitation, and hence no need for extended partitions or logical drives. The sda1 through sda7 partitions shown in Table 2-3 would refer to the first through seventh partitions on a GPT device.
+
+Partitioning divides a hard disk into sections, each of which can contain a separate filesystem used to store data. Each of these filesystems can then be accessed by Linux if it is attached (or mounted) to a certain directory. When data is stored in that particular directory, it is physically stored on the respective filesystem on the hard disk. The Fedora installation program can automatically create partitions based on common configurations; however, it is generally good practice to manually partition to suit the needs of the specific Linux system.
+
+At minimum, Linux typically requires only two partitions to be created: a partition that is mounted to the root directory in Linux (/) and that can contain all of the files used by the operating system, applications, and users, and a partition used for virtual memory (also known as swap memory). Virtual memory consists of an area on the hard disk or SSD that can be used to store information that would normally reside in physical memory (RAM) if the physical memory was being used excessively. When programs are executed that require a great deal of resources on the computer, information is continuously swapped from physical memory to virtual memory, and vice versa. Traditionally, Linux swap partitions were made to be at least the size of the physical RAM in the computer; however, they can be much larger if the Linux system is intended to run large applications. A swap partition does not contain a filesystem and is never mounted to a directory because the Linux operating system is ultimately responsible for swapping information.
+
+Although you might choose to create only root and swap partitions, extra partitions make Linux more robust against filesystem errors. For example, if the filesystem on one partition encounters an error, only data on one part of the system is affected and not the entire system (i.e., other filesystems). Because some common directories in Linux are used vigorously and as a result are more prone to failure, it is good practice to mount these directories to their own filesystems. Additionally, having a /boot partition allows your system to be recovered easily in the event of a boot-related issue, and is often a requirement if your / partition uses a particular technology that is not directly bootable, such as Logical Volume Manager (LVM) or B-tree Filesystem (BTRFS). Consequently, most Linux installation programs will create a /boot partition if you select the option to automatically have partitions created for you. Table 2-4 lists directories that are commonly mounted to separate partitions as well as their recommended sizes.
+
+Table 2-4 Common Linux Filesystems and Sizes
+Directory	Description	Recommended size
+/	Contains all directories not present on other filesystems	Depends on the size and number of other filesystems present, but is typically 20GB or more
+/boot	Contains the Linux kernel and boot files	1GB
+/home	Default location for user home directories	500MB per user
+/usr	System commands and utilities	Depends on the packages installed—typically 30GB or more
+/usr/local	Location for most additional programs	Depends on the packages installed—typically 30GB or more
+/opt	An alternate location for additional programs	Depends on the packages installed—typically 30GB or more
+/var	Contains log files and spools	Depends on whether the Linux system is used as a print server (which contains a large spool). For print servers, 10GB or more is typical. For other systems, 2GB or more is usually sufficient.
+/tmp	Holds temporary files created by programs	1GB
+Each of these filesystems can be of different types. The most common types used today are the ext2, ext3, ext4, VFAT, and XFS filesystems, although Linux can support upward of 50 filesystems. Each filesystem essentially performs the same function, which is to store files on a partition; however, each filesystem offers different features and is specialized for different uses. The ext2 filesystem is the traditional filesystem, and the Virtual File Allocation Table (VFAT) filesystem is compatible with the FAT and FAT32 filesystems in Windows. The ext3, ext4, and XFS filesystems, however, are much more robust than the ext2 and VFAT filesystems, as they perform a function called journaling. A journaling filesystem uses a journal to keep track of the information written to the hard disk. If you copy a file on the hard disk from one directory to another, that file must pass into RAM and then be written to the new location on the hard disk. If the power to the computer is turned off during this process, information might not be transmitted as expected and data might be lost or corrupted. With a journaling filesystem, each step required to copy the file to the new location is first written to a journal; this means the system can retrace the steps the system took prior to a power outage and complete the file copy. These filesystems also host a variety of additional improvements compared to ext2 and VFAT, including faster data transfer and indexing, which makes them common choices for Linux servers today.
+
+After you have selected the appropriate hard disk or SSD as an installation destination during the Fedora Linux installation shown in Figure 2-10, you must also choose whether the installation program should create partitions for you (Automatic), or whether you want to configure partitions manually (Custom) or manually using an advanced interface (Advanced Custom). If you choose Custom shown in Figure 2-10 and click Done, you will be prompted to choose the partitioning scheme, and optionally create a default partition layout that you can modify to suit your needs. If you choose a Standard partitioning scheme, this default partition layout will consist of a /boot and a / partition with an ext4 filesystem (not encrypted), as well as a swap partition that is the same size as the RAM in your computer, as shown in Figure 2-11.
+
+Figure 2-11
+
+Details
+Configuring disk partitions and filesystems
+
+In addition to the standard partitions that we have discussed already, you can instead choose a partition scheme that creates logical volumes for your Linux filesystems using the Logical Volume Manager (LVM) or partitions that support the new B-tree Filesystem (BTRFS). LVM and BTRFS are discussed in Chapters 5 and 6.
+
+To allow for easier system recovery, it is good form to choose a standard partition scheme and ensure that contents of disk partitions are not encrypted.
+
+Note 
+If your system has a Unified Extensible Firmware Interface (UEFI) BIOS on the motherboard, the installation program will also create a small UEFI System Partition to store boot-related information.
+
+Note 
+If your system has a hard disk or an SSD that uses a GPT instead of an MBR and does not contain a UEFI BIOS on the motherboard, the installation program will also create a small BIOS Boot partition to store boot-related information.
+
+After you are satisfied with your partition and filesystem configuration, you can click Done shown in Figure 2-11, confirm your changes in the dialog box that appears, and return to the localization and system options configuration screen shown in Figure 2-9. If you click the Begin Installation button in Figure 2-9, partition changes will be written to your storage device and the Fedora system packages will be installed from the installation media to the appropriate filesystems. This process will take some time to complete. After it has completed, you can click the Quit button that appears to exit the installation program. Next, you can shut down your live Fedora system, remove the installation media from your computer, and boot your computer into your new Fedora system.
+
+Configuring User Accounts
+All Linux systems require secure authenticated access, which means that each user must log in with a valid user name and password before gaining access to a user interface. Two user accounts must be created at minimum: the administrator account (root), which has full rights to the system, as well as a regular user account; the root user account should only be used when performing system administration tasks.
+
+On the first boot following a Fedora installation, you will be required to complete a Welcome wizard. This wizard allows you to disable location services and automatic error reporting, optionally integrate your online social media accounts, as well as configure a single regular user account for yourself, as shown in Figure 2-12. You can optionally click Set Up Enterprise Login in Figure 2-12 to join your Linux system to an Active Directory or Kerberos domain. After you click Next in Figure 2-12, you will be prompted to supply a password for your newly created user account and the Welcome wizard will then continue to boot into your system.
+
+Figure 2-12
+
+Details
+Choosing a regular user account username during the Welcome wizard
+
+By default, a root user is created during the installation process but not assigned a valid password. The regular user account that you create during the Welcome wizard is given special rights that allow you set a valid password for the root user using the sudo password root command following installation.
+
+Basic Linux Usage
+After the Linux operating system has been installed, you must log in to the system with a valid user name and password and interact with the user interface to perform tasks. To do this, it is essential to understand the Linux user interfaces, as well as basic tasks, such as command execution, obtaining online help, and shutting down the Linux system.
+
+Shells, Terminals, and the Kernel
+Recall that an operating system is merely a collection of software that allows you to use your computer hardware in a meaningful fashion. Every operating system has a core component, which loads all other components and serves to centrally control the activities of the computer. This component is known as the kernel, and in Linux it is simply a file, usually called vmlinuz, that is located on the hard disk and loaded when you first turn on your computer.
+
+When you interact with a computer, you are ultimately interacting with the kernel of the computer’s operating system. However, this interaction cannot happen directly; it must have a channel through which it can access the kernel as well as a user interface that passes user input to the kernel for processing. The channel that allows you to log in is called a terminal. Linux can have many terminals that allow you to log in to the computer locally or across a network. After you log in to a terminal, you receive a user interface called a shell, which then accepts your input and passes it to the kernel for processing. The shell that is used by default in Linux is the BASH shell (short for Bourne Again Shell), which is an improved version of the Bourne shell from AT&T and is the shell that is used throughout this book. The whole process looks similar to what is shown in Figure 2-13.
+
+Figure 2-13
+
+Details
+Shells, terminals, and the kernel
+
+As mentioned earlier, Linux is a multiuser and multitasking operating system and, as such, can allow for thousands of terminals. Each terminal could represent a separate logged-in user that has its own shell. The four different “channels” shown in Figure 2-13 could be different users logged in to the same Linux computer. Two users could be logged in locally to the server (seated at the server itself), and the other two could be logged in across a network, such as the Internet.
+
+By default, when you log in to a terminal, you receive a command-line shell (BASH shell), which prompts you to type commands to tell the Linux kernel what to do. However, in this computing age, most people prefer to use a graphical interface in which they can use a pointing device such as a mouse to navigate and start tasks. In this case, you can choose to start a graphical user interface (GUI) environment on top of your BASH shell after you are logged in to a command-line terminal, or you can switch to a graphical terminal, which allows users to log in and immediately receive a GUI environment. A typical command-line terminal login prompt looks like the following:
+
+
+A typical graphical terminal login for Fedora Linux (called the GNOME Display Manager or gdm) is shown in Figure 2-14.
+
+Figure 2-14
+
+Details
+The GNOME display manager (gdm)
+
+To access a terminal device at the local server, you can press a combination of keys, such as Ctrl+Alt+F2, to change to a separate terminal. If you are logging in across the network, you can use a variety of programs that connect to a terminal on the Linux computer. A list of local Linux terminals, along with their names and types, is shown in Table 2-5.
+
+Table 2-5 Common Linux Terminals
+Terminal name	Key combination	Login type
+tty1	Ctrl+Alt+F1	graphical (gdm)
+tty2	Ctrl+Alt+F2	command-line
+tty3	Ctrl+Alt+F3	command-line
+tty4	Ctrl+Alt+F4	command-line
+tty5	Ctrl+Alt+F5	command-line
+tty6	Ctrl+Alt+F6	command-line
+After you are logged in to a command-line terminal, you receive a prompt at which you can enter commands. The following example shows the user logging in as the root (administrator) user. As you can see in this example, after you log in as the root user, you see a # prompt:
+
+
+However, if you log in as a regular user to a command-line terminal (e.g., user1), you see a $ prompt, as follows:
+
+
+When you log in to a graphical terminal, the GUI environment of your choice is started; the default GUI environment in Fedora Linux is GNOME on Wayland, but you can instead select GNOME on X.org from the settings icon next to the Sign In button within the gdm. On most legacy Linux systems, the GUI environment replaces the gdm on tty1. However, on modern Linux systems such as Fedora 28, the GUI environment is typically loaded on tty2, and the gdm remains available on tty1 to allow for additional graphical logins for different users. Each additional graphical login results in an additional GUI environment loaded on the next available terminal (tty3, tty4, and so on).
+
+After the GUI environment starts, you can access a command-line terminal window by accessing the Activities menu in the upper left of the desktop and navigating to Show Applications, Utilities, Terminal. This will start a command-line terminal window within your GNOME desktop, as shown in Figure 2-15. You can open multiple, separate command-line terminal windows within a single GUI environment. Similarly, you can access several different BASH windows within a single command-line terminal (e.g., tty3) using an interactive terminal program such as screen or tmux. A sample tmux session with three BASH windows on tty3 is shown in Figure 2-16.
+
+Figure 2-15
+
+Details
+Using a command-line terminal within the GNOME desktop
+
+Figure 2-16
+
+Accessing multiple BASH windows within a single command-line terminal using tmux
+
+Note 
+By default, Fedora 28 does not allow the root user to log in to a GUI environment from the gdm for security reasons, as several graphical programs are not designed to be run as the root user. Instead, you should log in to a GUI environment as a regular user. When you run a graphical administrative utility as a regular user, the GUI environment prompts you for the root user password in order to continue.
+
+Basic Shell Commands
+When using a command-line terminal, the shell ultimately interprets all information you enter into the command line. This information includes the command itself, as well as options and arguments. Commands indicate the name of the program to execute and are case sensitive. Options are specific letters that start with a dash (-) and appear after the command name to alter the way the command works. Options are specific to the command in question; the persons who developed the command determined which options to allow for that command.
+
+Note 
+Some options start with two dashes (--); these options are referred to as POSIX options and are usually composed of a whole word, not just a letter.
+
+Arguments also appear after the command name, yet they do not start with a dash. They specify the parameters that tailor the command to your particular needs. Suppose, for example, that you want to list all of the files in the /etc/rpm directory on the hard disk. You could use the ls command with the –a option (which tells the ls command to list all files, including hidden files) and the /etc/rpm argument (which tells ls to look in the /etc/rpm directory), as shown in the following example:
+
+
+After you type the command and press Enter in the preceding output, the ls command shows that there are six files in the /etc/rpm directory (macros.color, macros.fjava, and so on). The command prompt then reappears, so that you can enter another command.
+
+Note 
+Commands, options, and arguments are case sensitive; an uppercase letter (A), for instance, is treated differently than a lowercase letter (a).
+
+Note 
+Always put a space between the command name, options, and arguments; otherwise, the shell does not understand that they are separate, and your command might not work as expected.
+
+Although you can pass options and arguments to commands, not all commands need to have arguments or options to work properly. The date command, which simply prints the current date and time, is an example:
+
+
+Table 2-6 lists some common commands that you can use without specifying any options or arguments.
+
+Table 2-6 Some Common Linux Commands
+Command	Description
+clear	Clears the terminal screen
+reset	Resets your terminal to use default terminal settings
+who	Displays currently logged-in users
+w	Displays currently logged-in users and their tasks
+whoami	Displays your login name
+id	Displays the numbers associated with your user account name and group names; these are commonly referred to as User IDs (UIDs) and Group IDs (GIDs)
+date	Displays the current date and time
+cal	Displays the calendar for the current month
+uname -a	Displays system information
+ls	Lists files
+exit	Exits out of your current shell
+If the output of a certain command is too large to fit on the terminal screen, press the Shift+Page Up keys simultaneously to view previous screens of information. Press Shift+Page Down simultaneously to navigate in the opposite direction.
+
+You can recall commands previously entered in the BASH shell using the keyboard arrow keys (the up, down, right, and left arrow keys). Thus, if you want to enter the same command again, cycle through the list of available commands with the keyboard up and down arrow keys and press Enter to re-execute that command.
+
+As a Linux administrator, you will regularly run commands that only the root user can run to perform system configuration. Even if you are logged in to the system as a regular user account, you can easily switch to the root user to perform any administrative tasks using the su (switch user) command. To switch to the root user and load the root user’s environment variables, you can run the su command with the — option and supply the root user’s password when prompted:
+
+
+Alternatively, to run a single command as the root only, you can run su –c “command” root and specify the root user’s password when prompted.
+
+If you do not specify the user name when using the su command, the root user is assumed. Additionally, the root user can use the su command to switch to any other user account without specifying a password:
+
+Shell Metacharacters
+Another important part of the shell are shell metacharacters, which are keyboard characters that have special meaning. One of the most commonly used metacharacters is the $ character, which tells the shell that the following text refers to a variable. A variable is a piece of information that is stored in memory; variable names are typically uppercase words, and most variables are set by the Linux system when you log in. An example of how you might use the $ metacharacter to refer to a variable is by using the echo command (which prints text to the terminal screen):
+
+
+Notice from the preceding output that $SHELL was translated into its appropriate value from memory (/bin/bash, the BASH shell). The shell recognized SHELL as a variable because it was prefixed by the $ metacharacter. Table 2-7 presents a list of common BASH shell metacharacters that are discussed throughout this book.
+
+Table 2-7 Common BASH Shell Metacharacters
+Metacharacter(s)	Description
+$	Shell variable
+~	Special home directory variable
+#	Shell script comment
+&	Background command execution
+;	Command termination
+< << > >>	Input/Output redirection
+|	Command piping
+* ? [ ]	Shell wildcards
+’ " \	Metacharacter quotes
+`	Command substitution
+( ) { }	Command grouping
+It is good practice to avoid metacharacters when typing commands unless you need to take advantage of their special functionality, as the shell readily interprets them, which might lead to unexpected results.
+
+Note 
+If you accidentally use one of these characters and your shell does not return you to the normal command prompt, press the Ctrl+c keys to cancel your current command and return to the normal command prompt.
+
+In some circumstances, you might need to use a metacharacter in a command and prevent the shell from interpreting its special meaning. To do this, enclose the metacharacters in single quotation marks ´ ´. Single quotation marks protect those metacharacters from being interpreted specially by the shell (i.e., a $ is interpreted as a $ character and not a variable identifier). You can also use double quotation marks (" ") to perform the same task; however, double quotation marks do not protect $, \, and ` characters. If only one character needs to be protected from shell interpretation, you can precede that character by a slash \ rather than enclosing it within quotation marks. An example of this type of quoting follows:
+
+
+As shown in Table 2-7, not all quotation characters protect characters from the shell. The back quotation characters ` ` can be used to perform command substitution; anything between back quotes is treated as another command by the shell, and its output is substituted in place of the back quotes. Take the expression ‛date‛ as an example:
+
+Shell Metacharacters
+Another important part of the shell are shell metacharacters, which are keyboard characters that have special meaning. One of the most commonly used metacharacters is the $ character, which tells the shell that the following text refers to a variable. A variable is a piece of information that is stored in memory; variable names are typically uppercase words, and most variables are set by the Linux system when you log in. An example of how you might use the $ metacharacter to refer to a variable is by using the echo command (which prints text to the terminal screen):
+
+
+Notice from the preceding output that $SHELL was translated into its appropriate value from memory (/bin/bash, the BASH shell). The shell recognized SHELL as a variable because it was prefixed by the $ metacharacter. Table 2-7 presents a list of common BASH shell metacharacters that are discussed throughout this book.
+
+Table 2-7 Common BASH Shell Metacharacters
+Metacharacter(s)	Description
+$	Shell variable
+~	Special home directory variable
+#	Shell script comment
+&	Background command execution
+;	Command termination
+< << > >>	Input/Output redirection
+|	Command piping
+* ? [ ]	Shell wildcards
+’ " \	Metacharacter quotes
+`	Command substitution
+( ) { }	Command grouping
+It is good practice to avoid metacharacters when typing commands unless you need to take advantage of their special functionality, as the shell readily interprets them, which might lead to unexpected results.
+
+Note 
+If you accidentally use one of these characters and your shell does not return you to the normal command prompt, press the Ctrl+c keys to cancel your current command and return to the normal command prompt.
+
+In some circumstances, you might need to use a metacharacter in a command and prevent the shell from interpreting its special meaning. To do this, enclose the metacharacters in single quotation marks ´ ´. Single quotation marks protect those metacharacters from being interpreted specially by the shell (i.e., a $ is interpreted as a $ character and not a variable identifier). You can also use double quotation marks (" ") to perform the same task; however, double quotation marks do not protect $, \, and ` characters. If only one character needs to be protected from shell interpretation, you can precede that character by a slash \ rather than enclosing it within quotation marks. An example of this type of quoting follows:
+
+
+As shown in Table 2-7, not all quotation characters protect characters from the shell. The back quotation characters ` ` can be used to perform command substitution; anything between back quotes is treated as another command by the shell, and its output is substituted in place of the back quotes. Take the expression ‛date‛ as an example:
+
+Changing Directories
+When you log into a Linux system, you are placed in your home directory, which is a place unique to your user account for storing personal files. Regular users usually have a home directory named after their user account under the /home directory, as in /home/sue. The root user, however, has a home directory called root under the root directory of the system (/root), as shown in Figure 3-2. Regardless of your user name, you can always refer to your own home directory using the ~ metacharacter.
+
+To confirm the system directory that you are currently in, simply observe the name at the end of the shell prompt or run the pwd (print working directory) command at a command-line prompt. If you are logged in as the root user, the following output is displayed on the terminal screen:
+
+
+However, if you are logged in as the user sue, you see the following output:
+
+
+To change directories, you can issue the cd (change directory) command with an argument specifying the destination directory. If you do not specify a destination directory, the cd command returns you to your home directory:
+
+
+You can also use the ~ metacharacter to refer to another user’s home directory by appending a user name at the end:
+
+
+In many of the examples discussed earlier, the argument specified after the cd command is an absolute pathname to a directory, meaning that the system has all the information it needs to find the destination directory because the pathname starts from the root (/) of the system. However, in most Linux commands, you can also use a relative pathname in place of an absolute pathname to reduce typing. A relative pathname is the pathname of a target file or directory relative to your current directory in the tree. To specify a directory below your current directory, refer to that directory by name (do not start the pathname with a / character). To refer to a directory one step closer to the root of the tree (also known as a parent directory), use two dots (..). An example of using relative pathnames to move around the directory tree is shown next:
+
+
+The preceding example used “..” to move up one parent directory and then used the word “mary” to specify the mary subdirectory relative to the current location in the tree; however, you can also move more than one level up or down the directory tree:
+
+
+Note 
+You can also use one dot ( . ) to refer to the current directory. Although this is not useful when using the cd command, you do use one dot later in this book.
+
+Although absolute pathnames are straightforward to use as arguments to commands when specifying the location of a certain file or directory, relative pathnames can save you a great deal of typing and reduce the potential for error if your current directory is far away from the root directory. Suppose, for example, that the current directory is /home/sue/projects/acme/plans and you need to change to the /home/sue/projects/acme directory. Using an absolute pathname, you would type cd /home/sue/projects/acme; however, using a relative pathname, you only need to type cd .. to perform the same task because the /home/sue/projects/acme directory is one parent directory above the current location in the directory tree.
+
+An alternate method for saving time when typing pathnames as arguments to commands is to use the Tab-completion feature of the BASH shell. To do this, type enough unique letters of a directory and press the Tab key to allow the BASH shell to find the intended file or directory being specified and fill in the appropriate information. If there is more than one possible match, the Tab-completion feature alerts you with a beep; pressing the Tab key again after this beep presents you with a list of possible files or directories.
+
+Observe the directory structure in Figure 3-2. To use the Tab-completion feature to change the current directory to /home/sue, you type cd /h and then press the Tab key. This changes the previous characters on the terminal screen to display cd /home/ (the BASH shell was able to fill in the appropriate information because the /home directory is the only directory under the / directory that starts with the letter “h”). Then, you could add an s character to the command, so that the command line displays cd /home/s, and press the Tab key once again to allow the shell to fill in the remaining letters. This results in the command cd /home/sue/ being displayed on the terminal screen (the sue directory is the only directory that begins with the s character under the /home directory). At this point, you can press Enter to execute the command and change the current directory to /home/sue.
+
+Note 
+In addition to directories, the Tab-completion feature of the BASH shell can be used to specify the pathname to files and executable programs.
+
+Displaying the Contents of Text Files
+So far, this chapter has discussed commands that can be used to navigate the Linux directory structure and view filenames and file types; it is usual now to display the contents of these files. By far, the most common file type that users display is text files. These files are usually small and contain configuration information or instructions that the shell interprets (called a shell script) but can also contain other forms of text, as in email messages. To view an entire text file on the terminal screen (also referred to as concatenation), you can use the cat command. The following is an example of using the cat command to display the contents of an email message (in the fictitious file project4):
+
+
+You can also use the cat command to display the line number of each line in the file in addition to the contents by passing the –n option to the cat command. In the following example, the number of each line in the project4 file is displayed:
+
+
+In some cases, you might want to display the contents of a certain text file in reverse order, which is useful when displaying files that have text appended to them continuously by system services. These files, also known as log files, contain the most recent entries at the bottom of the file. To display a file in reverse order, use the tac command (tac is cat spelled backwards), as shown next with the file project4:
+
+
+If the file displayed is very large and you only want to view the first few lines of it, you can use the head command. The head command displays the first 10 lines (including blank lines) of a text file to the terminal screen but can also take a numeric option specifying a different number of lines to display. The following shows an example of using the head command to view the top of the project4 file:
+
+
+Just as the head command displays the beginning of text files, the tail command can be used to display the end of text files. By default, the tail command displays the final 10 lines of a file, but it can also take a numeric option specifying the number of lines to display on the terminal screen, as shown in the following example with the project4 file:
+
+
+Although some text files are small enough to be displayed completely on the terminal screen, you might encounter text files that are too large to fit in a single screen. In this case, the cat command sends the entire file contents to the terminal screen; however, the screen only displays as much of the text as it has room for. To display a large text file in a page-by-page fashion, you need to use the more and less commands.
+
+The more command gets its name from the pg command once used on UNIX systems. The pg command displayed a text file page-by-page on the terminal screen, starting at the beginning of the file; pressing the spacebar or Enter key displays the next page, and so on. The more command does more than pg did, because it displays the next complete page of a text file if you press the spacebar, but displays only the next line of a text file if you press Enter. In that way, you can browse the contents of a text file page-by-page or line-by-line. The fictitious file project5 is an excerpt from Shakespeare’s tragedy Macbeth and is too large to be displayed fully on the terminal screen using the cat command. Using the more command to view its contents results in the following output:
+
+
+As you can see in the preceding output, the more command displays the first page without returning you to the shell prompt. Instead, the more command displays a prompt at the bottom of the terminal screen that indicates how much of the file is displayed on the screen as a percentage of the total file size. In the preceding example, 71 percent of the project5 file is displayed. At this prompt, you can press the spacebar to advance one whole page, or you can press the Enter key to advance to the next line. In addition, the more command allows other user interactions at this prompt. Pressing the h character at the prompt displays a help screen, which is shown in the following output, and pressing the q character quits the more command completely without viewing the remainder of the file.
+
+
+Just as the more command was named as a result of allowing more user functionality, the less command is named for doing more than the more command (remember that “less is more,” more or less). Like the more command, the less command can browse the contents of a text file page-by-page by pressing the spacebar and line-by-line by pressing the Enter key; however, you can also use the arrow keys on the keyboard to scroll up and down the contents of the file. The output of the less command, when used to view the project5 file, is as follows:
+
+
+Like the more command, the less command displays a prompt at the bottom of the file using the : character or the filename of the file being viewed (project5 in our example), yet the less command contains more keyboard shortcuts for searching out text within files. At the prompt, you can press the h key to obtain a help screen or the q key to quit. The first help screen for the less command is shown next:
+
+
+The more and less commands can also be used in conjunction with the output of commands if that output is too large to fit on the terminal screen. To do this, use the | metacharacter after the command, followed by either the more or less command, as follows:
+
+
+In the preceding example, the output of the ls –l command was redirected to the more command, which displays the first page of output on the terminal. You can then advance through the output page-by-page or line-by-line. This type of redirection is discussed in Chapter 7.
+
+Note 
+You can also use the diff command to identify the content differences between two text files, which is often useful when comparing revisions of configuration files on a Linux system. For example, the diff file1 file2 command would list the lines that are different between file1 and file2.
