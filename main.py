@@ -1,4 +1,6 @@
 import os
+import discord
+from discord.ext import commands
 import openai
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
@@ -37,20 +39,47 @@ qa = VectorDBQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore=ve
 conversation = [
     {
         "role": "system",
-        "content": "You are a helpful assitant with expertise in Linux and data bases."
+        "content": "You are a helpful assistant with expertise in Linux and databases."
     }
 ]
 
 max_conversation_length = 5
 
-while True:
-    user_question = input("Ask a question or type 'exit' to quit: ")
-    if user_question.lower() == "exit":
-        break
+intents = discord.Intents.default()
+intents.typing = False
+intents.presences = False
+intents.message_content = True
+intents.members = True
 
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f"{bot.user} has connected to Discord!")
+
+async def process_message(conversation, user_input):
     if len(conversation) > max_conversation_length * 2 - 1:  # Multiply by 2 to account for user and assistant messages
         conversation.pop(0)
         conversation.pop(0)
 
-    response = ask_question(conversation, user_question)
-    print("Bot:", response)
+    response = ask_question(conversation, user_input)
+    return response
+
+@bot.command()
+async def chat(ctx, *, user_input):
+    response = await process_message(conversation, user_input)
+    await ctx.send(response)
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    if message.guild is None:
+        response = await process_message(conversation, message.content)
+        await message.channel.send(response)
+    else:
+        await bot.process_commands(message)
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+bot.run(TOKEN)
