@@ -1,4 +1,3 @@
 # langchain_openai_qa_over_docs
 
-
-Sample text file is from Cengage online, 10 pg print out. From Guide to the LPIC
+gpt 3.5 model taking in a text file as data with embeddings from openai. The chatbot is conversational and does have memory and context as you progress through the conversation.
